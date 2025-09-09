@@ -27,10 +27,23 @@ export default function FocusApp() {
       {/* Main Content */}
       <main className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-200px)] px-6">
         <FocusInput />
-        <PomodoroTimer />
+        <div className="w-full px-4 flex flex-col md:flex-row items-center md:items-start justify-center gap-12">
+          <div className="md:w-[65%] ">
+            <div className="w-full flex justify-end">
+              <PomodoroTimer />
+            </div>
+          </div>
+
+          <div className=" md:w-[35%] ">
+            <div className="w-full max-h-[60vh] md:max-h-[72vh] flex">
+              <TodoSidebar />
+            </div>
+          </div>
+        </div>
+        
       </main>
 
-      <TodoSidebar />
+      
 
       {/* Floating Controls */}
       <FloatingControls />

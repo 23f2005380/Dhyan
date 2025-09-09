@@ -125,3 +125,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Responsive tweaks for small screens */
+@layer utilities {
+  .site-main-container {
+    @apply px-4 sm:px-6 md:px-6 lg:px-6;
+  }
+
+  /* Ensure background image covers on small screens without overflowing */
+  .nature-bg-mobile-fix {
+    background-position: center;
+    background-size: cover;
+  }
+}

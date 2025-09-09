@@ -35,7 +35,8 @@ export function PomodoroTimer() {
     >
       {/* Session Type Buttons */}
       <motion.div
-        className="flex gap-3"
+        // allow wrapping on small screens
+        className="flex flex-wrap gap-3 justify-center"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -99,7 +100,8 @@ export function PomodoroTimer() {
 
         {/* Control Buttons */}
         <motion.div
-          className="flex gap-6 justify-center"
+          // stack control buttons on small screens
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
@@ -108,7 +110,7 @@ export function PomodoroTimer() {
             <Button
               onClick={isRunning ? pauseTimer : startTimer}
               size="lg"
-              className="px-12 py-4 rounded-full text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white shadow-xl transition-all duration-300"
+              className="px-8 sm:px-12 py-3 sm:py-4 rounded-full text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white shadow-xl transition-all duration-300 w-full sm:w-auto"
             >
               <AnimatePresence mode="wait">
                 {isRunning ? (
@@ -145,7 +147,7 @@ export function PomodoroTimer() {
               onClick={resetTimer}
               variant="outline"
               size="lg"
-              className="px-8 py-4 rounded-full text-lg font-medium bg-black/40 hover:bg-black/50 text-white border-white/40 backdrop-blur-sm transition-all duration-300 shadow-lg"
+              className="px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg font-medium bg-black/40 hover:bg-black/50 text-white border-white/40 backdrop-blur-sm transition-all duration-300 shadow-lg w-full sm:w-auto"
             >
               <RotateCcw className="w-6 h-6 mr-3" />
               Reset

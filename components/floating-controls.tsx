@@ -15,14 +15,15 @@ export function FloatingControls() {
   return (
     <>
       <motion.div
-        className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-20"
+        // keep centered on small screens, but reduce spacing and use md styles on larger
+        className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-20 md:bottom-6 md:left-1/2 md:transform md:-translate-x-1/2"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
         whileHover={{ scale: 1.02 }}
       >
-        <Card className="p-3 bg-white/10 backdrop-blur-md border-white/20 rounded-full">
-          <div className="flex items-center gap-3">
+        <Card className="p-2 md:p-3 bg-white/10 backdrop-blur-md border-white/20 rounded-full">
+          <div className="flex items-center gap-2 md:gap-3">
             {/* Audio Controls */}
             <div className="flex gap-1">
               <AudioControls />
@@ -54,7 +55,7 @@ export function FloatingControls() {
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="w-10 h-10 rounded-full text-white hover:bg-white/20 transition-all duration-300"
+                          className="w-9 h-9 md:w-10 md:h-10 rounded-full text-white hover:bg-white/20 transition-all duration-300"
                         >
                           <Component className="w-5 h-5" />
                         </Button>
@@ -67,7 +68,7 @@ export function FloatingControls() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="w-10 h-10 rounded-full text-white hover:bg-white/20 transition-all duration-300"
+                      className="w-9 h-9 md:w-10 md:h-10 rounded-full text-white hover:bg-white/20 transition-all duration-300"
                     >
                       <Component className="w-5 h-5" />
                     </Button>

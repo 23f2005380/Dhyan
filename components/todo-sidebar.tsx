@@ -50,12 +50,13 @@ export function TodoSidebar() {
 
   return (
     <motion.div
-      className="fixed right-6 top-1/2 transform -translate-y-1/2 z-10 w-80"
+      // hide the large sidebar on small screens and only show on md+
+      className=" md:z-10 md:w-80 w-full"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.6 }}
     >
-      <Card className="bg-black/40 backdrop-blur-md border-white/30 p-4 h-96 shadow-2xl">
+      <Card className="bg-black/40 backdrop-blur-md border-white/30 p-4 md:h-96 h-auto shadow-2xl">
         <div className="flex items-center gap-2 mb-4">
           <Calendar className="w-5 h-5 text-white" />
           <h3 className="text-white font-semibold drop-shadow-md">Tasks</h3>
@@ -87,7 +88,7 @@ export function TodoSidebar() {
         </div>
 
         {/* Todo list with scroll */}
-        <ScrollArea className="h-48">
+  <ScrollArea className="h-48">
           <AnimatePresence>
             {sortedTodos.map((todo) => (
               <motion.div
